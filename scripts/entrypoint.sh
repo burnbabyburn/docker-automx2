@@ -1,8 +1,10 @@
 #!/bin/bash
 set -m
 
-export FLASK_APP=automua.server:app
-flask run --host=0.0.0.0 --port=${LISTEN_PORT:-4243} &
+export FLASK_APP=automua.server:create_app
+export FLASK_CONFIG=production
+
+/srv/web/automua/.venv/bin/python /srv/web/automua/.venv/bin/flask run --host=0.0.0.0 --port=${LISTEN_PORT:-4243} &
 
 sleep 3
 
