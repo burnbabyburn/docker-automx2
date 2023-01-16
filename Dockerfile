@@ -15,9 +15,12 @@ USER nonroot
 
 # copy all the files to the container
 COPY --chown=nonroot:nonroot ./scripts/. /srv/web/automua/.
+COPY /etc /etc
 
 # venv
 ENV VIRTUAL_ENV=/srv/web/automua/venv
+ENV FLASK_APP=automua.server:create_app
+ENV FLASK_CONFIG=production
 
 # python setup
 RUN python -m venv $VIRTUAL_ENV
