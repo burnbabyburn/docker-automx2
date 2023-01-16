@@ -1,8 +1,8 @@
 version: '2'
 services:
-  automx2:
-    image: andif888/docker-automx2:latest
+  automua:
+    image: andif888/docker-automua:latest
     ports:
       - "4243:4243"
     volumes:
-      - "./etc/automx2:/etc/automx2"
+      - "./etc/automua:/etc/automua"
