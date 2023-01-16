@@ -1,8 +1,10 @@
 version: '2'
 services:
   automua:
-    image: andif888/docker-automua:latest
-    ports:
-      - "4243:4243"
-    volumes:
-      - "./etc/automua:/etc/automua"
+    build: .
+#    image: andif888/docker-automua:latest
+#    ports:
+#      - "4243:4243"
+    network_mode: "host"
+#    volumes:
+#      - "./etc/automua:/etc/automua"
